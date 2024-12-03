@@ -1,0 +1,620 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core Tracking Features</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Core Tracking Features</h1>
+  </header>
+
+  <main class="main-content">
+    <section class="tracking-section">
+      <h2>Track Your Well-being</h2>
+      
+      <!-- Mood Tracker -->
+      <div class="tracker" id="mood-tracker">
+        <h3>Mood Tracker</h3>
+        <label for="mood">How are you feeling today?</label>
+        <select id="mood">
+          <option value="happy">😊 Happy</option>
+          <option value="neutral">😐 Neutral</option>
+          <option value="sad">😢 Sad</option>
+          <option value="stressed">😰 Stressed</option>
+        </select>
+        <button class="track-btn" onclick="saveMood()">Save Mood</button>
+        <p id="mood-output"></p>
+      </div>
+
+      <!-- Sleep Tracker -->
+      <div class="tracker" id="sleep-tracker">
+        <h3>Sleep Tracker</h3>
+        <label for="sleep">Hours Slept Last Night:</label>
+        <input type="number" id="sleep" placeholder="Enter hours (e.g., 7)" min="0" max="24">
+        <button class="track-btn" onclick="saveSleep()">Save Sleep</button>
+        <p id="sleep-output"></p>
+      </div>
+
+      <!-- Stress Level Tracker -->
+      <div class="tracker" id="stress-tracker">
+        <h3>Stress Level Tracker</h3>
+        <label for="stress">Rate Your Stress Level (1-10):</label>
+        <input type="number" id="stress" placeholder="Enter stress level" min="1" max="10">
+        <button class="track-btn" onclick="saveStress()">Save Stress Level</button>
+        <p id="stress-output"></p>
+      </div>
+
+      <!-- Energy Level Tracker -->
+      <div class="tracker" id="energy-tracker">
+        <h3>Energy Level Tracker</h3>
+        <label for="energy">Rate Your Energy Level (1-10):</label>
+        <input type="number" id="energy" placeholder="Enter energy level" min="1" max="10">
+        <button class="track-btn" onclick="saveEnergy()">Save Energy Level</button>
+        <p id="energy-output"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mindfulness and Relaxation Tools</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Mindfulness and Relaxation Tools</h1>
+  </header>
+
+  <main class="main-content">
+    <section class="relaxation-section">
+      <h2>Relax and Rejuvenate</h2>
+
+      <!-- Breathing Exercises -->
+      <div class="tool" id="breathing-exercises">
+        <h3>Breathing Exercises</h3>
+        <button class="tool-btn" onclick="startBreathing()">Start Breathing Exercise</button>
+        <div class="breathing-circle" id="breathing-circle"></div>
+      </div>
+
+      <!-- Meditation Sessions -->
+      <div class="tool" id="meditation-sessions">
+        <h3>Meditation Sessions</h3>
+        <button class="tool-btn" onclick="playMeditation()">Play Guided Meditation</button>
+        <audio id="meditation-audio" src="meditation.mp3"></audio>
+      </div>
+
+      <!-- Mindful Activities -->
+      <div class="tool" id="mindful-activities">
+        <h3>Mindful Activities</h3>
+        <p>Try these activities:</p>
+        <ul>
+          <li>Color a mandala</li>
+          <li>Go for a nature walk</li>
+          <li>Solve a simple puzzle</li>
+        </ul>
+      </div>
+
+      <!-- Visualization Exercises -->
+      <div class="tool" id="visualization-exercises">
+        <h3>Visualization Exercises</h3>
+        <button class="tool-btn" onclick="startVisualization()">Start Visualization</button>
+        <div class="visualization" id="visualization-box"></div>
+      </div>
+
+      <!-- Music or Nature Sounds -->
+      <div class="tool" id="music-nature-sounds">
+        <h3>Relaxing Sounds</h3>
+        <select id="sound-selector">
+          <option value="none">Select a sound</option>
+          <option value="rain">Rain</option>
+          <option value="forest">Forest</option>
+          <option value="waves">Ocean Waves</option>
+        </select>
+        <button class="tool-btn" onclick="playSound()">Play</button>
+        <button class="tool-btn" onclick="stopSound()">Stop</button>
+        <audio id="relaxing-sound"></audio>
+      </div>
+    </section>
+  </main>
+
+ 
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community and Social Support</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Community and Social Support</h1>
+  </header>
+
+  <main class="main-content">
+    <section class="community-section">
+      <h2>Connect and Share</h2>
+
+      <!-- Discussion Forums -->
+      <div class="feature" id="discussion-forums">
+        <h3>Discussion Forums</h3>
+        <p>Join conversations on specific mental health topics:</p>
+        <ul>
+          <li><a href="#">Anxiety Management</a></li>
+          <li><a href="#">Coping with Depression</a></li>
+          <li><a href="#">Mindfulness Practices</a></li>
+          <li><a href="#">General Support</a></li>
+        </ul>
+      </div>
+
+      <!-- Peer Support Groups -->
+      <div class="feature" id="peer-support">
+        <h3>Peer Support Groups</h3>
+        <p>Find support groups near you:</p>
+        <button class="feature-btn" onclick="findSupportGroups()">Find Support Groups</button>
+        <div id="support-groups-output"></div>
+      </div>
+
+      <!-- Live Chat or Helpline -->
+      <div class="feature" id="live-chat">
+        <h3>Live Chat or Helpline</h3>
+        <p>Need immediate support? Click below to connect:</p>
+        <button class="feature-btn" onclick="startLiveChat()">Start Live Chat</button>
+        <p><a href="tel:+18005555555">Call Helpline: 1-800-555-5555</a></p>
+      </div>
+
+      <!-- Anonymous Sharing -->
+      <div class="feature" id="anonymous-sharing">
+        <h3>Anonymous Sharing</h3>
+        <p>Share your thoughts safely and anonymously:</p>
+        <textarea id="anonymous-input" placeholder="Write your thoughts here..."></textarea>
+        <button class="feature-btn" onclick="submitAnonymous()">Share Anonymously</button>
+        <p id="anonymous-output"></p>
+      </div>
+    </section>
+  </main>
+
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized Insights</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Personalized Insights and Suggestions</h1>
+  </header>
+
+  <main class="main-content">
+    <section class="insights-section">
+      <h2>Understand Your Mental Health</h2>
+
+      <!-- Mood Trends and Reports -->
+      <div class="feature" id="mood-trends">
+        <h3>Mood Trends and Reports</h3>
+        <canvas id="moodChart"></canvas>
+      </div>
+
+      <!-- Sleep and Stress Correlations -->
+      <div class="feature" id="sleep-stress">
+        <h3>Sleep and Stress Correlations</h3>
+        <canvas id="correlationChart"></canvas>
+      </div>
+
+      <!-- Activity Recommendations -->
+      <div class="feature" id="activity-recommendations">
+        <h3>Activity Recommendations</h3>
+        <button class="feature-btn" onclick="getRecommendations()">Get Recommendations</button>
+        <ul id="recommendations-list"></ul>
+      </div>
+
+      <!-- Goal Setting and Achievement Tracking -->
+      <div class="feature" id="goal-setting">
+        <h3>Goal Setting and Tracking</h3>
+        <input type="text" id="goal-input" placeholder="Set a new goal">
+        <button class="feature-btn" onclick="addGoal()">Add Goal</button>
+        <ul id="goal-list"></ul>
+      </div>
+    </section>
+  </main>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CBT Tools</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Cognitive Behavioral Therapy (CBT) Tools</h1>
+  </header>
+
+  <main class="main-content">
+    <section class="cbt-tools">
+      <h2>Address Your Thoughts and Behaviors</h2>
+
+      <!-- Thought Record Tool -->
+      <div class="feature" id="thought-record">
+        <h3>Thought Record Tool</h3>
+        <form id="thoughtForm">
+          <textarea id="thought-input" placeholder="Record a negative thought..."></textarea>
+          <textarea id="challenge-input" placeholder="Challenge this thought with a positive or realistic one..."></textarea>
+          <button type="button" class="feature-btn" onclick="addThoughtRecord()">Save Record</button>
+        </form>
+        <ul id="thought-list"></ul>
+      </div>
+
+      <!-- Behavioral Activation Plans -->
+      <div class="feature" id="behavioral-plan">
+        <h3>Behavioral Activation Plans</h3>
+        <form id="activityForm">
+          <input type="text" id="activity-input" placeholder="Enter an activity to plan">
+          <button type="button" class="feature-btn" onclick="addBehaviorPlan()">Add Activity</button>
+        </form>
+        <ul id="activity-list"></ul>
+      </div>
+
+      <!-- CBT Journals -->
+      <div class="feature" id="cbt-journal">
+        <h3>CBT Journals</h3>
+        <textarea id="journal-input" placeholder="Reflect on your emotions, triggers, and responses..."></textarea>
+        <button class="feature-btn" onclick="saveJournalEntry()">Save Entry</button>
+        <div id="journal-entries"></div>
+      </div>
+    </section>
+  </main>
+
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physical and Mental Health Integration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Physical and Mental Health Integration</h1>
+  </header>
+
+  <main class="main-content">
+    <section class="health-integration">
+      <h2>Integrate Physical and Mental Wellness</h2>
+
+      <!-- Exercise Tracker -->
+      <div class="feature" id="exercise-tracker">
+        <h3>Exercise Tracker</h3>
+        <form id="exerciseForm">
+          <input type="text" id="exercise-input" placeholder="Enter exercise activity">
+          <input type="number" id="duration-input" placeholder="Duration (minutes)">
+          <button type="button" class="feature-btn" onclick="logExercise()">Log Exercise</button>
+        </form>
+        <ul id="exercise-list"></ul>
+      </div>
+
+      <!-- Diet/Nutrition Tracker -->
+      <div class="feature" id="nutrition-tracker">
+        <h3>Diet/Nutrition Tracker</h3>
+        <form id="nutritionForm">
+          <input type="text" id="meal-input" placeholder="Log a meal/snack">
+          <input type="number" id="hydration-input" placeholder="Water intake (ml)">
+          <button type="button" class="feature-btn" onclick="logMeal()">Log Meal</button>
+        </form>
+        <ul id="nutrition-list"></ul>
+      </div>
+
+      <!-- Fitness Challenges -->
+      <div class="feature" id="fitness-challenges">
+        <h3>Fitness Challenges</h3>
+        <button class="feature-btn" onclick="getFitnessChallenge()">Get Challenge</button>
+        <p id="challenge-text"></p>
+      </div>
+    </section>
+  </main>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motivation and Affirmations</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Motivation and Affirmations</h1>
+  </header>
+
+  <main class="main-content">
+    <section class="motivation-section">
+      <h2>Encourage Positive Thinking</h2>
+
+      <!-- Daily Affirmations -->
+      <div class="feature" id="daily-affirmations">
+        <h3>Daily Affirmations</h3>
+        <p id="affirmation-text">Click the button to get today's affirmation!</p>
+        <button class="feature-btn" onclick="generateAffirmation()">Get Affirmation</button>
+      </div>
+
+      <!-- Motivational Quotes -->
+      <div class="feature" id="motivational-quotes">
+        <h3>Motivational Quotes</h3>
+        <p id="quote-text">Click the button to inspire yourself with a quote!</p>
+        <button class="feature-btn" onclick="generateQuote()">Get Quote</button>
+      </div>
+
+      <!-- Gamification -->
+      <div class="feature" id="gamification">
+        <h3>Gamification</h3>
+        <p>Complete tasks to earn points and unlock rewards!</p>
+        <button class="feature-btn" onclick="completeTask()">Complete a Task</button>
+        <p>Points: <span id="points">0</span></p>
+        <p id="reward-text"></p>
+      </div>
+    </section>
+  </main>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educational Resources</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Educational Resources</h1>
+  </header>
+
+  <main class="main-content">
+    <section class="resources-section">
+      <h2>Learn More About Mental Health</h2>
+
+      <!-- Mental Health Articles -->
+      <div class="feature" id="mental-health-articles">
+        <h3>Mental Health Articles</h3>
+        <ul id="articles-list">
+          <li><a href="#" target="_blank">Understanding Anxiety</a></li>
+          <li><a href="#" target="_blank">The Benefits of Mindfulness</a></li>
+          <li><a href="#" target="_blank">Coping Strategies for Stress</a></li>
+        </ul>
+      </div>
+
+      <!-- Video Tutorials -->
+      <div class="feature" id="video-tutorials">
+        <h3>Video Tutorials</h3>
+        <button class="feature-btn" onclick="showVideo()">Watch a Video</button>
+        <div id="video-container"></div>
+      </div>
+
+      <!-- Resource Library -->
+      <div class="feature" id="resource-library">
+        <h3>Resource Library</h3>
+        <ul id="library-list">
+          <li><a href="#" target="_blank">Guided Meditations</a></li>
+          <li><a href="#" target="_blank">Books on Mental Health</a></li>
+          <li><a href="#" target="_blank">External Tools and Websites</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Powered Features</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>AI-Powered Features</h1>
+  </header>
+
+  <main class="main-content">
+    <section class="ai-features-section">
+      <h2>Smart and Interactive Tools</h2>
+
+      <!-- Mood Prediction -->
+      <div class="feature" id="mood-prediction">
+        <h3>Mood Prediction</h3>
+        <form id="mood-form">
+          <label for="sleep-hours">Hours of Sleep:</label>
+          <input type="number" id="sleep-hours" name="sleep-hours" min="0" max="24">
+          
+          <label for="diet-quality">Diet Quality (1-10):</label>
+          <input type="number" id="diet-quality" name="diet-quality" min="1" max="10">
+          
+          <button type="button" class="feature-btn" onclick="predictMood()">Predict Mood</button>
+        </form>
+        <p id="predicted-mood">Your predicted mood will appear here.</p>
+      </div>
+
+      <!-- Chatbot Companion -->
+      <div class="feature" id="chatbot-companion">
+        <h3>Chatbot Companion</h3>
+        <div id="chatbox">
+          <div id="chat-log"></div>
+          <input type="text" id="user-input" placeholder="Type a message..." />
+          <button class="feature-btn" onclick="chatbotReply()">Send</button>
+        </div>
+      </div>
+
+      <!-- Emotion Recognition -->
+      <div class="feature" id="emotion-recognition">
+        <h3>Emotion Recognition</h3>
+        <p>Click an emoji to log your current emotion:</p>
+        <div id="emoji-container">
+          <span onclick="logEmotion('😊')">😊</span>
+          <span onclick="logEmotion('😔')">😔</span>
+          <span onclick="logEmotion('😠')">😠</span>
+          <span onclick="logEmotion('😄')">😄</span>
+          <span onclick="logEmotion('😢')">😢</span>
+        </div>
+        <p id="logged-emotion">Your emotion log will appear here.</p>
+      </div>
+    </section>
+  </main>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integration with Wearables</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Wearable Integration</h1>
+  </header>
+
+  <main class="main-content">
+    <section class="wearables-section">
+      <h2>Connect Your Wearables</h2>
+
+      <!-- Fitness Tracker Integration -->
+      <div class="feature" id="fitness-tracker">
+        <h3>Fitness Tracker Integration</h3>
+        <button class="feature-btn" onclick="syncFitnessTracker()">Sync with Device</button>
+        <p id="fitness-data">No data synced yet.</p>
+      </div>
+
+      <!-- Heart Rate Monitoring -->
+      <div class="feature" id="heart-rate-monitoring">
+        <h3>Heart Rate Monitoring</h3>
+        <button class="feature-btn" onclick="startHeartRateMonitoring()">Start Monitoring</button>
+        <p id="heart-rate-data">Heart rate: -- BPM</p>
+      </div>
+
+      <!-- Sleep Monitoring -->
+      <div class="feature" id="sleep-monitoring">
+        <h3>Sleep Monitoring</h3>
+        <button class="feature-btn" onclick="syncSleepData()">Sync Sleep Data</button>
+        <p id="sleep-data">No sleep data available yet.</p>
+      </div>
+    </section>
+  </main>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customization</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Customization</h1>
+  </header>
+
+  <main class="main-content">
+    <section class="customization-section">
+      <h2>Personalize Your Experience</h2>
+
+      <!-- Custom Themes -->
+      <div class="feature" id="custom-themes">
+        <h3>Custom Themes</h3>
+        <button class="theme-btn" onclick="setTheme('light')">Light Theme</button>
+        <button class="theme-btn" onclick="setTheme('dark')">Dark Theme</button>
+        <button class="theme-btn" onclick="setTheme('calming')">Calming Theme</button>
+      </div>
+
+      <!-- Reminders and Notifications -->
+      <div class="feature" id="reminders">
+        <h3>Reminders and Notifications</h3>
+        <label for="reminder-type">Set Reminder:</label>
+        <select id="reminder-type">
+          <option value="hydration">Hydration</option>
+          <option value="journaling">Journaling</option>
+          <option value="meditation">Meditation</option>
+        </select>
+        <button class="feature-btn" onclick="setReminder()">Set Reminder</button>
+        <p id="reminder-msg">No reminders set yet.</p>
+      </div>
+
+      <!-- User Profiles -->
+      <div class="feature" id="user-profiles">
+        <h3>User Profiles</h3>
+        <form id="profile-form">
+          <label for="user-name">Name:</label>
+          <input type="text" id="user-name" placeholder="Enter your name">
+          
+          <label for="user-goals">Goals:</label>
+          <textarea id="user-goals" placeholder="Describe your goals"></textarea>
+          
+          <button type="button" class="feature-btn" onclick="saveProfile()">Save Profile</button>
+        </form>
+        <p id="profile-summary">Your profile summary will appear here.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 Personalization Hub. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
